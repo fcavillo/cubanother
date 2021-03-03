@@ -6,7 +6,7 @@
 /*   By: fcavillo <fcavillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/14 11:20:11 by fcavillo          #+#    #+#             */
-/*   Updated: 2021/03/03 10:11:04 by fcavillo         ###   ########.fr       */
+/*   Updated: 2021/03/03 16:37:10 by fcavillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,12 @@ typedef struct s_win
     int     y;
 }           t_win;
 
+typedef struct	s_sprite
+{
+	int		x;
+	int		y;
+}			t_sprite;
+
 typedef struct s_tex
 {
     char    *n;
@@ -68,6 +74,7 @@ typedef struct  s_all
     t_map   map;
     t_win   win;
     t_tex   tex;
+	t_sprite	*sprite;
 }           t_all; 
 
 
@@ -91,7 +98,19 @@ void    ft_map(char *line, t_all *all);
 int		ft_str_has(char *str, char c);
 int     ft_map_parsing(char *mapname, t_all *all);
 int		ft_empty_line(char *str);
-int     ft_spawn(char c, t_all *all, int i, int j);
+int     ft_spawn_and_sprite(char c, t_all *all, int i, int j);
+int     ft_load_sprite(t_all *all);
+int    ft_check_above(t_all *all, int i, int j);
+int    ft_check_below(t_all *all, int i, int j);
+int    ft_check_left(t_all *all, int i, int j);
+int    ft_check_right(t_all *all, int i, int j);
+int     check_map_content(t_all *all, int i, int j);
+void	free_all(t_all *all);
+int    ft_check_map(t_all *all);
+int     ft_check_map_zero(t_all *all, int i, int j);
+
+
+
 
 
 

@@ -6,7 +6,7 @@
 /*   By: fcavillo <fcavillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 10:59:45 by fcavillo          #+#    #+#             */
-/*   Updated: 2021/03/03 11:47:39 by fcavillo         ###   ########.fr       */
+/*   Updated: 2021/03/03 16:23:22 by fcavillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ int     ft_line_is_map(char *line, t_all *all)
     {
         while (line[i] != '\0')
         {
-            if (line[i] != ' ' && line[i] != '0' && line[i] != '1' \
-				&& line[i] != '2' && line[i] != 'N' && line[i] != 'S' \
+            if (line[i] != ' ' && line[i] != '0' && line[i] != '1' 
+				&& line[i] != '2' && line[i] != 'N' && line[i] != 'S' 
 				&& line[i] != 'E' && line[i] != 'W' && line[i] != '\n'
 				&& line[i] != '\t')
             {
@@ -47,27 +47,37 @@ int     ft_map_copy(char *line, t_all *all)
     int         j;
 
     j = 0;
-//    all->map.cub[i] = NULL;
+    all->map.cub[i] = NULL;
     if(!(all->map.cub[i] = malloc(sizeof(char) * (all->map.x + 1)))) // added parenthesis
         return (0);
     while (line[j]) //copie line dans map
     {
-        if (ft_spawn(line[j], all, i, j) == 1)
+        if (ft_spawn_and_sprite(line[j], all, i, j) == 1)
             all->map.cub[i][j] = '0';
         else if (line[j] == ' ')
-            all->map.cub[i][j] = '1';
+            all->map.cub[i][j] = ' '; //remplacer par des 1?
         else
             all->map.cub[i][j] = line[j];
         j++;
     }
-    while (j <= all->map.x - 1) //tester avec strict et pas de -1 / complete ave des 0
+    while (j <= all->map.x - 1) //tester avec strict et pas de -1 / completait ave des 0
     {
-        all->map.cub[i][j] = '1';
+        all->map.cub[i][j] = ' ';
         j++;
     }
     all->map.cub[i][j] = '\0';
     i++;    
     return (0);
+}
+
+void     ft_copied_map_parsing(t_all *all)
+{
+    int i;
+
+    i = 0;
+    ft_check_map(all);     
+    ft_load_sprite(all);
+//    if ()
 }
 
 int     ft_map_parsing(char *mapname, t_all *all)
@@ -95,7 +105,7 @@ int     ft_map_parsing(char *mapname, t_all *all)
         free(line);
     }
     close(fd);
-    //A FAIRE
+    ft_copied_map_parsing(all);
     return (0);
 }
 

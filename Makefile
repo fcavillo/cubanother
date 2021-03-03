@@ -16,7 +16,9 @@ SRCS = srcs/cub3d.c \
 		srcs/error.c \
 		srcs/parsing.c \
 		srcs/parse_map.c \
+		srcs/check_map_zero.c \
 		test.c \
+
 
 OBJ = $(SRCS:.c=.o)
 

@@ -6,7 +6,7 @@
 /*   By: fcavillo <fcavillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 09:45:56 by fcavillo          #+#    #+#             */
-/*   Updated: 2021/03/03 11:50:13 by fcavillo         ###   ########.fr       */
+/*   Updated: 2021/03/03 13:54:41 by fcavillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,6 @@ void    ft_parse(char *mapname, t_all *all)
         ft_line(all, line); 
         ft_map(line, all);
         free(line); 
-        printf("pouet\n");
     }
     close(fd);
     if (all->map.x == 0 || all->map.y == 0)
@@ -96,9 +95,9 @@ int     main(int ac, char **av)
     }
     else
         printf("%sError\nInvalid Args\n", RED);\
-    printf("%sTESTING\n", BLU);
-    //test(&all);
-        //printf("%sTHE TESTING HAS BEEN TESTED\n", BLU);
-    ft_error(&all, "Beau travail BG ;)");
+    printf("%sTESTING\n", GRN);
+    test(&all);
+    printf("%sTHE TESTING HAS BEEN TESTED\n", GRN);
+    ft_error(&all, "Beau travail BG");
     return(0);
 }

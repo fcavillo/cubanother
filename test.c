@@ -6,7 +6,7 @@
 /*   By: fcavillo <fcavillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/20 14:45:14 by fcavillo          #+#    #+#             */
-/*   Updated: 2021/03/02 11:43:08 by fcavillo         ###   ########.fr       */
+/*   Updated: 2021/03/03 16:42:55 by fcavillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,13 @@ void test(t_all *all)
     printf("text.w = %s\n", all->tex.w);
     printf("text.spr = %s\n", all->tex.spr);
     printf("color.c = %u\n", all->tex.c);   
-    printf("color.f = %u\n", all->tex.f);
-    printf("map_x = %d\nmap_y = %d\n", all->map.x, all->map.y);
-//    printf("SPAWN :\norientation : %c x : %d y : %d\n", s->cub.spawn_orientation, s->cub.spawn_x, s->cub.spawn_y);
-/*    while (i <= s->cub.y)
+    printf("color.f = %u\n\n", all->tex.f);
+    while (i < all->map.y)
     {
-        printf("%s\n", s->cub.tab[i]);
+        printf("%s\n", all->map.cub[i]);
         i++;
-    }*/
+    }
+    printf("\nSPAWN :\norientation : %c x : %d y : %d\n", all->map.spawn_orientation, all->map.spawn_x, all->map.spawn_y);
+    printf("map_x = %d\nmap_y = %d\n", all->map.x, all->map.y);
+    printf("Sprite number = %d\n", all->map.spr_nb);
 }
