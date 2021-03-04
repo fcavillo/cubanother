@@ -6,7 +6,7 @@
 /*   By: fcavillo <fcavillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 09:48:17 by fcavillo          #+#    #+#             */
-/*   Updated: 2021/03/03 11:43:59 by fcavillo         ###   ########.fr       */
+/*   Updated: 2021/03/04 09:43:43 by fcavillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ void    ft_init_2(t_all *all)
     all->map.charmap = 0;
     all->map.inmap = 0;
     all->map.count = 0;
+    all->err = 0;
+    all->err2 = 0;
 }
 
 void    ft_init(t_all *all)

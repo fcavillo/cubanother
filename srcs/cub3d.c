@@ -6,7 +6,7 @@
 /*   By: fcavillo <fcavillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 09:45:56 by fcavillo          #+#    #+#             */
-/*   Updated: 2021/03/03 13:54:41 by fcavillo         ###   ########.fr       */
+/*   Updated: 2021/03/04 09:48:12 by fcavillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,10 @@ void    ft_parse(char *mapname, t_all *all)
         free(line); 
     }
     close(fd);
-    if (all->map.x == 0 || all->map.y == 0)
-        ft_error(all, "Where is the map?\n");
-    ft_map_parsing(mapname, all);
+    if (all->map.x == 0 || all->map.y == 0 || all->err == 2)
+        ft_error(all, "Missing parameter in .cub\n");
+    else
+        ft_map_parsing(mapname, all);
 }
 
 int     ft_start(char *str, t_all *all)
@@ -98,6 +99,7 @@ int     main(int ac, char **av)
     printf("%sTESTING\n", GRN);
     test(&all);
     printf("%sTHE TESTING HAS BEEN TESTED\n", GRN);
-    ft_error(&all, "Beau travail BG");
+    free_all(&all);
+    printf("%sThe End\n", YEL);
     return(0);
 }

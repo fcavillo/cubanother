@@ -14,7 +14,7 @@ SRCS = srcs/cub3d.c \
 		srcs/get_next_line.c \
 		srcs/get_next_line_utils.c \
 		srcs/error.c \
-		srcs/parsing.c \
+		srcs/parsing_params.c \
 		srcs/parse_map.c \
 		srcs/check_map_zero.c \
 		test.c \

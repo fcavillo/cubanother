@@ -6,7 +6,7 @@
 /*   By: fcavillo <fcavillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/14 11:20:11 by fcavillo          #+#    #+#             */
-/*   Updated: 2021/03/03 16:37:10 by fcavillo         ###   ########.fr       */
+/*   Updated: 2021/03/04 09:43:54 by fcavillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ typedef struct  s_all
 {
     int     save;
     int     err;
+    int     err2;
     t_map   map;
     t_win   win;
     t_tex   tex;
@@ -108,6 +109,7 @@ int     check_map_content(t_all *all, int i, int j);
 void	free_all(t_all *all);
 int    ft_check_map(t_all *all);
 int     ft_check_map_zero(t_all *all, int i, int j);
+void	free_all(t_all *all);
 
 
 
