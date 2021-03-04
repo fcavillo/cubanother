@@ -6,7 +6,7 @@
 /*   By: fcavillo <fcavillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 14:56:22 by fcavillo          #+#    #+#             */
-/*   Updated: 2021/03/03 16:36:49 by fcavillo         ###   ########.fr       */
+/*   Updated: 2021/03/04 10:22:14 by fcavillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,12 @@ int     ft_spawn_and_sprite(char c, t_all *all, int i, int j)
 {
 	if (c == '2')
 		all->map.spr_nb++;
-	if (c == 'W' || c == 'S' || c == 'E' || c == 'W')
+	if (c == 'W' || c == 'S' || c == 'E' || c == 'N')
 	{
-		if (all->map.spawn_orientation != 'A')
-			all->map.spawn_nb = 1;
 		all->map.spawn_orientation = c;
 		all->map.spawn_x = i;
 		all->map.spawn_y = j;
+		all->map.spawn_nb++;
 		return (1);           
 	}
 	return (0);

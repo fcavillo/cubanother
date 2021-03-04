@@ -6,7 +6,7 @@
 /*   By: fcavillo <fcavillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/20 14:45:14 by fcavillo          #+#    #+#             */
-/*   Updated: 2021/03/03 16:42:55 by fcavillo         ###   ########.fr       */
+/*   Updated: 2021/03/04 10:37:03 by fcavillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void test(t_all *all)
     printf("text.spr = %s\n", all->tex.spr);
     printf("color.c = %u\n", all->tex.c);   
     printf("color.f = %u\n\n", all->tex.f);
-    while (i < all->map.y)
+    while (i < all->map.y && all->err2 != 100)
     {
         printf("%s\n", all->map.cub[i]);
         i++;

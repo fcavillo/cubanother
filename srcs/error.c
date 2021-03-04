@@ -6,7 +6,7 @@
 /*   By: fcavillo <fcavillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 13:13:58 by fcavillo          #+#    #+#             */
-/*   Updated: 2021/03/04 09:54:57 by fcavillo         ###   ########.fr       */
+/*   Updated: 2021/03/04 10:24:58 by fcavillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,4 +70,15 @@ void    ft_error(t_all *all, char *str)
 		free_all(all);
 	}
 //    ft_error_2(t_all *all);
+}
+
+void		ft_check_errors(t_all *all)
+{
+	if (all->map.spawn_nb == 0)
+		ft_error(all, "There is no player spawn\n");
+	if (all->map.spawn_nb >= 2)
+		ft_error(all, "Too many players\n");
+	if (all->map.emptyline == 1)
+		ft_error(all, "Empty line in the map\n");
+	
 }

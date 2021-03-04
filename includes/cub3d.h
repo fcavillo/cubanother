@@ -6,7 +6,7 @@
 /*   By: fcavillo <fcavillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/14 11:20:11 by fcavillo          #+#    #+#             */
-/*   Updated: 2021/03/04 09:43:54 by fcavillo         ###   ########.fr       */
+/*   Updated: 2021/03/04 10:12:46 by fcavillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,6 +110,7 @@ void	free_all(t_all *all);
 int    ft_check_map(t_all *all);
 int     ft_check_map_zero(t_all *all, int i, int j);
 void	free_all(t_all *all);
+void		ft_check_errors(t_all *all);
 
 
 

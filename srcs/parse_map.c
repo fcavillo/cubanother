@@ -6,7 +6,7 @@
 /*   By: fcavillo <fcavillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 10:59:45 by fcavillo          #+#    #+#             */
-/*   Updated: 2021/03/03 16:23:22 by fcavillo         ###   ########.fr       */
+/*   Updated: 2021/03/04 10:33:24 by fcavillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ void     ft_copied_map_parsing(t_all *all)
     i = 0;
     ft_check_map(all);     
     ft_load_sprite(all);
+    ft_check_errors(all);
 //    if ()
 }
 
@@ -94,7 +95,7 @@ int     ft_map_parsing(char *mapname, t_all *all)
     while (ret != 0)
     {
         ret = get_next_line(fd, &line, all);
-        if (all->map.inmap == 1 && ft_empty_line(line)
+        if (all->map.inmap == 1 && ft_empty_line(line) 
                 && all->map.count < all->map.y)
             all->map.emptyline = 1; //whywhywhy
         if ((all->map.inmap = ft_line_is_map(line, all)) == 1)

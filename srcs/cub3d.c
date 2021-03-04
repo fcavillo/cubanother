@@ -6,7 +6,7 @@
 /*   By: fcavillo <fcavillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 09:45:56 by fcavillo          #+#    #+#             */
-/*   Updated: 2021/03/04 09:48:12 by fcavillo         ###   ########.fr       */
+/*   Updated: 2021/03/04 10:05:04 by fcavillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,9 @@ void    ft_parse(char *mapname, t_all *all)
     ret = 1;
     line = NULL;
     if ((fd = open(mapname, O_DIRECTORY)) != -1)
-        ft_error(all, "Argv2 is a directory\n");
+        return (ft_error(all, "Argv2 is a directory\n"));
     else if ((fd = open(mapname, O_RDONLY)) == -1)
-        ft_error(all, "Invalid .cub file\n");
+        return (ft_error(all, "Invalid .cub file\n"));
     all->err = 0;
     while (ret != 0 && all->err != 2)
     {
